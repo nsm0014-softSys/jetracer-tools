@@ -1,0 +1,8 @@
+std_msgs/Header header
+bool is_auto
+bool is_auto_steer
+bool is_auto_throttle
+bool is_emergency_stop
+bool is_recieving_joystick
+bool is_recieving_auto_steer
+bool is_recieving_auto_throttle

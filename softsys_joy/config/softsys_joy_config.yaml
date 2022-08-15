@@ -1,0 +1,16 @@
+softsys_joy_node:
+  ros__parameters:
+    servo_update_rate_seconds: 0.01 # publish time in seconds
+    joy_timeout: 0.7 # joystick heartbeat timeout in seconds
+    auto_timeout: 2.0 # timeout for autonomous driving inputs
+    autonomous_switching_delay: 0.5 # seconds between auto mode switching
+    drive_servo_num: 1 # i2c drive servo number
+    steer_servo_num: 2 # i2c steer servo number
+    min_steer_value: 236 # pwm min steer value (far left)
+    max_steer_value: 366 # pwm max steer value (far right)
+    min_throttle_value: 295 # pwm min throttle value (top speed)
+    max_throttle_value: 325 # pwm max throttle value (idle/brake value)
+
+# 300, 325
+
+# 337 backwards

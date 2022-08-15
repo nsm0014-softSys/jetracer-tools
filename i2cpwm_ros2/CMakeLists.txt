@@ -1,0 +1,57 @@
+cmake_minimum_required(VERSION 3.8)
+project(i2cpwm_ros2)
+
+# Default to C99
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 99)
+endif()
+
+# Default to C++14
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# Find needed packages
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(i2cpwm_ros2_msgs REQUIRED)
+
+include_directories(include)
+# Find src files to compile
+add_executable(i2cpwm_ros2 src/i2cpwm_ros2.cpp)
+ament_target_dependencies(i2cpwm_ros2 rclcpp std_msgs std_srvs geometry_msgs i2cpwm_ros2_msgs)
+
+target_link_libraries(${PROJECT_NAME}
+  i2c
+)
+
+install( 
+  TARGETS i2cpwm_ros2
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# make sure we grab config folder
+install(DIRECTORY
+  config
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  set(ament_cmake_copyright_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+ament_package()

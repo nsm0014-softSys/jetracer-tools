@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>softsys_joy</name>
+  <version>0.0.1</version>
+  <description>A joystick node responsible for sitting between the jet racer servo node and any external control node.</description>
+  <maintainer email="carsonloyal123@me.com">root</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>joy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>i2cpwm_ros2_msgs</depend>
+  <depend>softsys_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>launch_xml</depend>
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

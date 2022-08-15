@@ -1,0 +1,26 @@
+i2cpwm_ros2:
+  ros__parameters:
+    logger_level: INFO
+    i2c_device_address: /dev/i2c-
+    controller_io_device: 1
+    controller_io_handle: 0
+    pwm_frequency: 50
+    active_board: 1
+    drive_config:
+      mode: 3
+      radius: 0.062
+      rpm: 60.0
+      scale: 0.3
+      track: 0.2
+      servos:
+        servo1:
+          number: 1
+          position: 1
+
+
+
+
+
+
+
+
